@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demande enregistrée — Gaël Le Pennec · Moniteur de plongée à Paris</title>
+  <meta name="description" content="Confirmation de votre demande.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <div class="bandeau">Toute l'année en fosse, près de Paris · Entrée de la fosse et matériel compris · Bons cadeaux disponibles</div>
+
+  <header class="entete">
+    <div class="conteneur entete__barre">
+      <a class="logo" href="index.html">Gaël Le Pennec<span class="logo__metier">Moniteur de plongée en fosse</span></a>
+      <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <a href="bapteme.html">Baptême</a>
+        <a href="cours-collectifs.html">Cours collectifs</a>
+        <a href="cours-individuels.html">Cours individuels</a>
+        <a href="offrir.html">Bon cadeau</a>
+        <a href="index.html#moniteur">Votre moniteur</a>
+        <!-- Remplacer le numéro dans href (format international) et dans le texte -->
+        <a class="entete__tel" href="tel:+33000000000">[TÉLÉPHONE]</a>
+        <a class="bouton bouton--principal" href="reservation.html">Réserver</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="conteneur">
+    <div class="texte">
+      <div class="message message--erreur" id="demo" hidden>Version de démonstration : le site n'est pas encore relié à Web3Forms ni à Stripe, donc rien n'a été envoyé ni payé. Voir le README, « Mise en service ».</div>
+
+      <!-- Variante : demande de réservation -->
+      <div id="bloc-reservation">
+        <p class="surtitre">Demande envoyée</p>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.75rem)">Merci <span data-recap="nom"></span>, votre demande est bien partie.</h1>
+        <div class="fiche__bloc">
+          <h2 style="margin-top: 0; font-size: 1.375rem">Votre demande</h2>
+          <ul id="recap">
+            <li>Plongée : <strong data-recap="offre">non précisée</strong></li>
+            <li>Date souhaitée : <strong data-recap="date">à convenir</strong></li>
+            <li>Nombre de personnes : <strong data-recap="personnes">1</strong></li>
+            <li id="recap-code" hidden>Bon cadeau : <strong data-recap="code"></strong></li>
+          </ul>
+        </div>
+        <h2>Et maintenant ?</h2>
+        <ol class="deroule" id="suite-paiement">
+          <li>Gaël vérifie le créneau et vous répond par e-mail sous [DÉLAI].</li>
+          <li>Son e-mail contient un lien de paiement sécurisé pour l'acompte de [MONTANT].</li>
+          <li>Une fois l'acompte réglé, votre créneau est bloqué. Le solde se règle sur place.</li>
+        </ol>
+        <ol class="deroule" id="suite-bon" hidden>
+          <li>Gaël vérifie votre code et le créneau, puis vous répond par e-mail sous [DÉLAI].</li>
+          <li>Votre date est confirmée : vous n'avez rien à payer.</li>
+        </ol>
+        <p class="petit">Pas de réponse sous [DÉLAI] ? Pensez à vérifier vos courriers indésirables, ou appelez le [TÉLÉPHONE].</p>
+      </div>
+
+      <!-- Variante : bon cadeau payé (Stripe renvoie ici après le paiement) -->
+      <div id="bloc-cadeau" hidden>
+        <p class="surtitre">Bon cadeau</p>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.75rem)">Merci, votre paiement est confirmé.</h1>
+        <p class="chapeau">Vous avez reçu le reçu de paiement par e-mail.</p>
+        <h2>Et maintenant ?</h2>
+        <ol class="deroule">
+          <li>Gaël prépare le bon cadeau avec un code unique.</li>
+          <li>Vous le recevez par e-mail sous [DÉLAI], à imprimer ou à transférer.</li>
+          <li>La personne réserve sa date sur ce site avec son code, quand elle veut, pendant [DURÉE DE VALIDITÉ].</li>
+        </ol>
+      </div>
+
+      <div class="groupe-boutons" style="margin-top: 16px">
+        <a class="bouton bouton--principal" href="index.html">Retour à l'accueil</a>
+        <a class="bouton bouton--secondaire" href="bapteme.html">Voir le déroulé du baptême</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__grille">
+      <div class="pied__bloc">
+        <span class="pied__nom">Gaël Le Pennec · Moniteur de plongée</span>
+        <span>Paris et Île-de-France · Déplacements : [ZONE DE DÉPLACEMENT]</span>
+        <span>[DIPLÔME] · Carte professionnelle n° [NUMÉRO]</span>
+      </div>
+      <div class="pied__bloc">
+        <a href="tel:+33000000000">[TÉLÉPHONE]</a>
+        <span>[ADRESSE E-MAIL]</span>
+        <span>[RÉSEAUX SOCIAUX]</span>
+      </div>
+      <div class="pied__bloc">
+        <a href="bapteme.html">Baptême de plongée</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="offrir.html">Offrir un bon cadeau</a>
+        <a href="reservation.html?bon=1">Utiliser un bon cadeau</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html#annulation">Annulation et report</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

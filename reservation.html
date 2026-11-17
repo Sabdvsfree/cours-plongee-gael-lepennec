@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réserver une plongée — Gaël Le Pennec · Moniteur de plongée à Paris</title>
+  <meta name="description" content="Envoyez votre demande de baptême, de cours collectif ou de cours individuel en fosse près de Paris.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <div class="bandeau">Toute l'année en fosse, près de Paris · Entrée de la fosse et matériel compris · Bons cadeaux disponibles</div>
+
+  <header class="entete">
+    <div class="conteneur entete__barre">
+      <a class="logo" href="index.html">Gaël Le Pennec<span class="logo__metier">Moniteur de plongée en fosse</span></a>
+      <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <a href="bapteme.html">Baptême</a>
+        <a href="cours-collectifs.html">Cours collectifs</a>
+        <a href="cours-individuels.html">Cours individuels</a>
+        <a href="offrir.html">Bon cadeau</a>
+        <a href="index.html#moniteur">Votre moniteur</a>
+        <!-- Remplacer le numéro dans href (format international) et dans le texte -->
+        <a class="entete__tel" href="tel:+33000000000">[TÉLÉPHONE]</a>
+        <a class="bouton bouton--principal" href="reservation.html" aria-current="page">Réserver</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="conteneur reservation">
+
+    <div class="reservation__infos">
+      <div class="entete-section" style="margin-bottom: 0">
+        <h1 style="font-size: clamp(2rem, 4vw, 2.75rem)">Réserver une plongée</h1>
+        <p class="chapeau">Indiquez la plongée et la date souhaitées. Rien à payer maintenant : Gaël vérifie d'abord le créneau.</p>
+      </div>
+      <ol class="deroule">
+        <li>Vous envoyez votre demande. Gaël la reçoit par e-mail.</li>
+        <li>Sous [DÉLAI], il vous confirme la date par e-mail, avec un lien de paiement sécurisé.</li>
+        <li>Vous réglez l'acompte de [MONTANT] par carte : votre créneau est bloqué.</li>
+        <li>Le solde se règle sur place, [MOYEN DE PAIEMENT SUR PLACE].</li>
+      </ol>
+      <p class="petit">Vous avez un bon cadeau ? Cochez la case dans le formulaire : vous n'avez rien à payer.</p>
+      <p class="petit">Annulation ou report gratuit jusqu'à [DÉLAI] avant la plongée. Vous préférez appeler ? [TÉLÉPHONE].</p>
+      <p class="petit">C'est pour offrir ? <a href="offrir.html">Commandez plutôt un bon cadeau</a>, sans date à fixer.</p>
+    </div>
+
+    <form class="formulaire" id="formulaire-demande" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <h2 style="font-size: 1.375rem">Votre demande</h2>
+
+      <div class="message message--erreur" id="erreurs" role="alert" hidden></div>
+
+      <div class="champ">
+        <label for="offre">Plongée souhaitée</label>
+        <select id="offre" name="offre">
+          <option value="bapteme">Baptême de plongée</option>
+          <option value="collectif">Cours collectif</option>
+          <option value="individuel">Cours individuel</option>
+          <option value="autre">Groupe, déplacement ou sortie en mer</option>
+        </select>
+      </div>
+
+      <div class="rangee">
+        <div class="champ">
+          <label for="date">Date souhaitée</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <div class="champ">
+          <label for="personnes">Nombre de personnes</label>
+          <input id="personnes" name="personnes" type="number" min="1" max="12" value="1" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="champ">
+        <label for="prenom">Prénom et nom</label>
+        <input id="prenom" name="prenom" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="champ">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <span class="champ__aide">La confirmation et le lien de paiement arrivent à cette adresse.</span>
+      </div>
+
+      <div class="champ">
+        <label for="telephone">Téléphone</label>
+        <input id="telephone" name="telephone" type="tel" autocomplete="tel">
+        <span class="champ__aide">Facultatif, utile si le créneau doit être changé au dernier moment.</span>
+      </div>
+
+      <label class="case" for="a-un-bon">
+        <input id="a-un-bon" name="a_un_bon" type="checkbox">
+        J'ai un bon cadeau
+      </label>
+
+      <div class="champ" id="champ-code" hidden>
+        <label for="code">Code du bon cadeau</label>
+        <input id="code" name="code_bon" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Exemple : PLG-4K7Q">
+        <span class="champ__aide">Il figure sur le bon reçu par e-mail. Gaël le vérifie avant de confirmer la date.</span>
+      </div>
+
+      <div class="champ">
+        <label for="precisions">Précisions</label>
+        <textarea id="precisions" name="precisions" placeholder="Âge des participants, expérience de plongée, autres dates possibles, question de santé"></textarea>
+      </div>
+
+      <!-- Piège à robots : champ invisible, laissé vide par les humains -->
+      <input type="checkbox" name="botcheck" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <button class="bouton bouton--principal bouton--large" type="submit">Envoyer la demande</button>
+
+      <p class="petit">Vos informations servent uniquement à traiter cette demande. <a href="mentions-legales.html#donnees">En savoir plus</a>.</p>
+    </form>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__grille">
+      <div class="pied__bloc">
+        <span class="pied__nom">Gaël Le Pennec · Moniteur de plongée</span>
+        <span>Paris et Île-de-France · Déplacements : [ZONE DE DÉPLACEMENT]</span>
+        <span>[DIPLÔME] · Carte professionnelle n° [NUMÉRO]</span>
+      </div>
+      <div class="pied__bloc">
+        <a href="tel:+33000000000">[TÉLÉPHONE]</a>
+        <span>[ADRESSE E-MAIL]</span>
+        <span>[RÉSEAUX SOCIAUX]</span>
+      </div>
+      <div class="pied__bloc">
+        <a href="bapteme.html">Baptême de plongée</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="offrir.html">Offrir un bon cadeau</a>
+        <a href="reservation.html?bon=1">Utiliser un bon cadeau</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html#annulation">Annulation et report</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1068 @@
+/* ==========================================================================
+   Site du moniteur de plongée — feuille de styles
+   Les couleurs et polices se changent ici, dans :root.
+   ========================================================================== */
+
+:root {
+  --fond: #f4f7f8;
+  --blanc: #ffffff;
+  --marine: #0e2a3b;
+  --marine-clair: #16394e;
+  --bleu: #0b6e8e;
+  --bleu-fonce: #084f66;
+  --ciel: #9ed3e6;
+  --accent: #f2a65a;
+  --accent-fonce: #e8933c;
+  --texte: #0e2a3b;
+  --texte-doux: #3d5564;
+  --bordure: #d9e3e8;
+  --bordure-forte: #7e9aa8;
+  --titres: "Space Grotesk", system-ui, sans-serif;
+  --corps: Inter, system-ui, sans-serif;
+  --largeur: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Un élément masqué reste masqué, quel que soit son style d'affichage */
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--corps);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titres);
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--bleu);
+}
+
+a:hover {
+  color: var(--bleu-fonce);
+}
+
+:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--marine);
+  color: var(--blanc);
+  padding: 12px 16px;
+  z-index: 100;
+}
+
+.lien-evitement:focus {
+  left: 8px;
+  top: 8px;
+}
+
+.conteneur {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section--blanche {
+  background: var(--blanc);
+  border-top: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.section--marine {
+  background: var(--marine);
+  color: var(--blanc);
+}
+
+.entete-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.chapeau {
+  font-size: 1.0625rem;
+  color: var(--texte-doux);
+}
+
+.surtitre {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bleu);
+}
+
+.section--marine .surtitre {
+  color: var(--ciel);
+}
+
+.section--marine .chapeau {
+  color: #c9dce5;
+}
+
+/* Boutons ---------------------------------------------------------------- */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font: 600 1rem var(--corps);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bouton--principal {
+  background: var(--accent);
+  color: var(--marine);
+}
+
+.bouton--principal:hover {
+  background: var(--accent-fonce);
+  color: var(--marine);
+}
+
+.bouton--secondaire {
+  background: var(--blanc);
+  color: var(--marine);
+  border-color: #9fb4c0;
+}
+
+.bouton--secondaire:hover {
+  border-color: var(--marine);
+  color: var(--marine);
+}
+
+.bouton--large {
+  width: 100%;
+}
+
+/* En-tête ---------------------------------------------------------------- */
+
+.entete {
+  background: var(--blanc);
+  border-bottom: 1px solid var(--bordure);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.entete__barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.logo {
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--marine);
+  text-decoration: none;
+}
+
+.menu-bouton {
+  display: none;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #9fb4c0;
+  background: var(--blanc);
+  color: var(--marine);
+  font: 600 0.9375rem var(--corps);
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a:not(.bouton) {
+  color: var(--marine);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding: 12px 0;
+}
+
+.nav a:not(.bouton):hover,
+.nav a[aria-current="page"] {
+  color: var(--bleu);
+}
+
+/* Accueil : accroche ------------------------------------------------------ */
+
+.accroche {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.accroche__texte {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.accroche__texte .chapeau {
+  font-size: 1.1875rem;
+  max-width: 520px;
+}
+
+.groupe-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reassurance {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 0.875rem;
+  color: var(--texte-doux);
+}
+
+.photo-provisoire {
+  min-height: 420px;
+  background: #dce9ee;
+  border: 1px dashed var(--bordure-forte);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--texte-doux);
+  font-size: 0.9375rem;
+}
+
+/* Grilles de cartes ------------------------------------------------------- */
+
+.grille {
+  display: grid;
+  gap: 20px;
+}
+
+.grille--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grille--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.carte {
+  background: var(--fond);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carte p {
+  font-size: 0.9375rem;
+  color: var(--texte-doux);
+  flex-grow: 1;
+}
+
+.carte__lien {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 10px 0;
+}
+
+/* Parcours plongée -------------------------------------------------------- */
+
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.colonne-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.parcours {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  counter-reset: etape;
+}
+
+.parcours li {
+  counter-increment: etape;
+  background: var(--marine-clair);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.parcours li::before {
+  content: counter(etape);
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ciel);
+}
+
+/* Étapes ------------------------------------------------------------------ */
+
+.etape {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 3px solid var(--bleu);
+  padding-top: 20px;
+}
+
+.etape__numero {
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--bleu);
+}
+
+.etape p {
+  font-size: 0.9375rem;
+  color: var(--texte-doux);
+}
+
+/* Tarifs ------------------------------------------------------------------ */
+
+.tarif {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tarif--mis-en-avant {
+  border: 2px solid var(--bleu);
+  padding: 31px;
+}
+
+.tarif__prix {
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.tarif p:not(.tarif__prix) {
+  font-size: 0.9375rem;
+  color: var(--texte-doux);
+  flex-grow: 1;
+}
+
+.note {
+  margin-top: 24px;
+  font-size: 0.9375rem;
+  color: var(--texte-doux);
+}
+
+/* Confiance et avis ------------------------------------------------------- */
+
+.liste-garanties {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.liste-garanties li {
+  padding: 16px 20px;
+  background: var(--fond);
+  border-radius: 10px;
+}
+
+.avis {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.avis blockquote {
+  margin: 0;
+  padding: 24px;
+  background: var(--fond);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avis footer {
+  font-size: 0.875rem;
+  color: var(--texte-doux);
+}
+
+/* Questions fréquentes ---------------------------------------------------- */
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.faq details {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 0 24px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 20px 0;
+  min-height: 48px;
+}
+
+.faq details p {
+  padding-bottom: 20px;
+  color: var(--texte-doux);
+}
+
+/* Bandeau d'appel --------------------------------------------------------- */
+
+.appel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Réservation ------------------------------------------------------------- */
+
+.reservation {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
+
+.reservation__creneaux {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.creneaux {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.creneaux__jour {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--texte-doux);
+}
+
+.creneau {
+  min-height: 48px;
+  border-radius: 8px;
+  border: 1px solid #9fb4c0;
+  background: var(--blanc);
+  color: var(--marine);
+  font: 500 0.9375rem var(--corps);
+  cursor: pointer;
+}
+
+.creneau:hover:not(:disabled) {
+  border-color: var(--bleu);
+}
+
+.creneau[aria-pressed="true"] {
+  border: 2px solid var(--bleu);
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: 600;
+}
+
+.creneau:disabled {
+  border-color: var(--bordure);
+  background: #eef2f4;
+  color: #5b7181;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.formulaire {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.champ label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+  min-height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--bordure-forte);
+  padding: 10px 14px;
+  font: 400 1rem var(--corps);
+  color: var(--texte);
+  background: var(--blanc);
+  width: 100%;
+}
+
+.champ textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.champ__aide {
+  font-size: 0.8125rem;
+  color: var(--texte-doux);
+}
+
+.message {
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 0.9375rem;
+}
+
+.message--erreur {
+  background: #fbebeb;
+  color: #7a1f1f;
+  border: 1px solid #e3a9a9;
+}
+
+.message--succes {
+  background: #e5f4e4;
+  color: #1d4d1b;
+  border: 1px solid #9cc99a;
+}
+
+.petit {
+  font-size: 0.8125rem;
+  color: var(--texte-doux);
+}
+
+/* Page de texte (mentions légales) --------------------------------------- */
+
+.texte {
+  max-width: 760px;
+  padding: 56px 0 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.texte h2 {
+  font-size: 1.5rem;
+  margin-top: 16px;
+}
+
+/* Pied de page ------------------------------------------------------------ */
+
+.pied {
+  background: var(--marine);
+  color: #c9dce5;
+  font-size: 0.9375rem;
+}
+
+.pied__grille {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px 24px;
+}
+
+.pied__bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pied__nom {
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--blanc);
+}
+
+.pied a {
+  color: var(--blanc);
+}
+
+/* Adaptation aux petits écrans ------------------------------------------- */
+
+/* Menu repliable : le menu complet ne tient sur une ligne qu'au-delà de 1200 px */
+
+@media (max-width: 1200px) {
+  .menu-bouton {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px 24px 20px;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--bordure);
+  }
+
+  .nav.est-ouvert {
+    display: flex;
+  }
+
+  .entete__tel {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .grille--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accroche,
+  .deux-colonnes,
+  .reservation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .photo-provisoire {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .accroche {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .grille--3,
+  .grille--4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .formulaire {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================================
+   Ajouts pour le site du moniteur de plongée
+   (choix issus du benchmark : chiffres clés, galerie, moniteur, bon cadeau)
+   ========================================================================== */
+
+.entete__tel {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--marine);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 12px 0;
+}
+
+.bandeau {
+  background: var(--marine);
+  color: #c9dce5;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 10px 24px;
+}
+
+.note-avis {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--texte);
+}
+
+/* Chiffres clés d'une offre */
+
+.chiffres {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.chiffres li {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.8125rem;
+  color: var(--texte-doux);
+  display: flex;
+  flex-direction: column;
+}
+
+.chiffres strong {
+  font-family: var(--titres);
+  font-size: 1rem;
+  color: var(--texte);
+}
+
+.chiffres--large {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.chiffres--large li {
+  padding: 16px 20px;
+  font-size: 0.875rem;
+}
+
+.chiffres--large strong {
+  font-size: 1.375rem;
+}
+
+.carte__prix {
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--texte) !important;
+  flex-grow: 0 !important;
+}
+
+.carte .bouton {
+  margin-top: 4px;
+}
+
+/* Galerie */
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.galerie .photo-provisoire {
+  min-height: 220px;
+  border-radius: 12px;
+}
+
+/* Votre moniteur */
+
+.moniteur {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.moniteur .photo-provisoire {
+  min-height: 380px;
+}
+
+/* Listes de fiche (compris, à prévoir, pré-requis) */
+
+.fiche {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.fiche__bloc {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fiche__bloc ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--texte-doux);
+  font-size: 0.9375rem;
+}
+
+.deroule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pas;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.deroule li {
+  counter-increment: pas;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.deroule li::before {
+  content: counter(pas);
+  font-family: var(--titres);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--bleu);
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 0.9375rem;
+}
+
+.case input {
+  width: 20px;
+  height: 20px;
+}
+
+.rangee {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reservation__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .moniteur {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .fiche {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chiffres--large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+
+  .galerie {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .galerie .photo-provisoire {
+    min-height: 150px;
+  }
+}
+
+/* Témoignages en grille */
+
+.temoignages blockquote {
+  margin: 0;
+  padding: 24px;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.temoignages footer {
+  font-size: 0.875rem;
+  color: var(--texte-doux);
+}
+
+.chiffres strong {
+  overflow-wrap: anywhere;
+}
+
+/* Cartes blanches sur fond clair (offres de l'accueil) */
+
+.carte--blanche {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+}
+
+.carte--blanche .chiffres li {
+  background: var(--fond);
+  border: none;
+}
+
+.texte .fiche__bloc {
+  margin: 8px 0;
+}
+
+/* Piège à robots du formulaire : invisible pour les visiteurs */
+
+.piege {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.bouton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Le menu et le logo ne se coupent pas sur deux lignes */
+
+.nav a {
+  white-space: nowrap;
+}
+
+@media (min-width: 761px) {
+  .logo {
+    white-space: nowrap;
+  }
+}
+
+.nav {
+  gap: 22px;
+}
+
+/* Logo : le nom, puis le métier en petit dessous */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo__metier {
+  font-family: var(--corps);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--texte-doux);
+}
