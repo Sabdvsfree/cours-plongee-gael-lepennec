@@ -186,3 +186,5 @@ Pour le bon lui-même, un modèle Canva avec le prénom, l'offre, le code et la 
 - Mise en service : Web3Forms, liens Stripe, tableau des bons cadeaux
 - Assistant de questions fréquentes et ses evals
 - Référencement local et fiche d'établissement Google
+
+Site publié avec GitHub Pages.
