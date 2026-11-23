@@ -43,33 +43,57 @@
 
     <section class="section section--blanche">
       <div class="conteneur">
+        <!-- Visible tant que les liens Stripe ne sont pas collés dans js/config.js -->
+        <div class="message message--info" id="demo-paiement" hidden>Version de démonstration : le paiement Stripe n'est pas encore branché. Le bouton « Payer et offrir » mène directement à la page de confirmation, sans rien payer, pour montrer la suite.</div>
         <div class="grille grille--4">
           <article class="carte carte--blanche">
+            <span class="surtitre">Pour une première fois</span>
             <h3>Un baptême de plongée</h3>
-            <p>Une première immersion en fosse, seul avec le moniteur.</p>
+            <p>Une première immersion en fosse, seul avec le moniteur. Aucune expérience nécessaire.</p>
+            <details class="carte__details">
+              <summary>En savoir plus</summary>
+              <p>20 à 30 minutes sous l'eau, jusqu'à 6 m, avec le moniteur à ses côtés. Explications au sec, puis mise à l'eau là où on a pied. Tout le matériel est fourni. Dès 8 ans, sans certificat médical : il suffit d'être à l'aise dans l'eau.</p>
+            </details>
             <p class="carte__prix">[PRIX] €</p>
             <a class="bouton bouton--principal" href="confirmation.html?type=cadeau&amp;demo=1" data-paiement="bonBapteme">Payer et offrir</a>
           </article>
           <article class="carte carte--blanche">
+            <span class="surtitre">Pour une première fois</span>
+            <h3>Une découverte de l'apnée</h3>
+            <p>Une première séance d'apnée en fosse, en petit groupe. Aucune expérience nécessaire.</p>
+            <details class="carte__details">
+              <summary>En savoir plus</summary>
+              <p>1 h 30, dont 1 h dans l'eau : respiration et relaxation au sec, premières apnées en surface, puis une descente douce le long d'un câble. Matériel fourni. Dès 12 ans, avec un certificat médical de non contre-indication à l'apnée.</p>
+            </details>
+            <p class="carte__prix">[PRIX] €</p>
+            <a class="bouton bouton--principal" href="confirmation.html?type=cadeau&amp;demo=1" data-paiement="bonApnee">Payer et offrir</a>
+          </article>
+          <article class="carte carte--blanche">
+            <span class="surtitre">Pour progresser</span>
             <h3>Un cours individuel</h3>
-            <p>Une séance en tête-à-tête, en plongée ou en apnée.</p>
+            <p>Une séance en tête-à-tête avec le moniteur, en plongée ou en apnée.</p>
+            <p class="carte__condition">En plongée, ce cours est réservé à une personne qui a déjà fait un baptême. Sinon, offrez plutôt le baptême.</p>
+            <details class="carte__details">
+              <summary>En savoir plus</summary>
+              <p>1 h dans l'eau avec le moniteur pour elle seule : prendre confiance, revoir les gestes de sécurité, travailler sa flottabilité ou, en apnée, sa respiration et sa descente. Matériel et entrée de la fosse compris. Un certificat médical de non contre-indication sera demandé.</p>
+            </details>
             <p class="carte__prix">[PRIX] €</p>
             <a class="bouton bouton--principal" href="confirmation.html?type=cadeau&amp;demo=1" data-paiement="bonIndividuel">Payer et offrir</a>
           </article>
           <article class="carte carte--blanche">
+            <span class="surtitre">Pour progresser</span>
             <h3>Un cours collectif</h3>
             <p>Une séance en petit groupe, en plongée ou en apnée.</p>
+            <p class="carte__condition">En plongée, ce cours est réservé à une personne qui a déjà fait un baptême. Sinon, offrez plutôt le baptême.</p>
+            <details class="carte__details">
+              <summary>En savoir plus</summary>
+              <p>1 h dans l'eau en petit groupe (4 plongeurs ou 6 apnéistes au maximum), avec des exercices en binôme pour apprendre et progresser. Matériel et entrée de la fosse compris. Dès 12 ans, avec un certificat médical de non contre-indication.</p>
+            </details>
             <p class="carte__prix">[PRIX] €</p>
             <a class="bouton bouton--principal" href="confirmation.html?type=cadeau&amp;demo=1" data-paiement="bonCollectif">Payer et offrir</a>
           </article>
-          <article class="carte carte--blanche">
-            <h3>Une découverte de l'apnée</h3>
-            <p>Une première séance d'apnée en fosse.</p>
-            <p class="carte__prix">[PRIX] €</p>
-            <a class="bouton bouton--principal" href="confirmation.html?type=cadeau&amp;demo=1" data-paiement="bonApnee">Payer et offrir</a>
-          </article>
         </div>
-        <p class="note">Paiement sécurisé par carte. Sur la page de paiement, vous indiquez le prénom de la personne et, si vous le souhaitez, un petit mot.</p>
+        <p class="note">Un doute sur le bon à offrir ? Le baptême de plongée et la découverte de l'apnée conviennent à tout le monde, même sans aucune expérience.</p>
       </div>
     </section>
 
@@ -79,11 +103,12 @@
           <h2>Comment ça se passe</h2>
         </div>
         <ol class="deroule">
-          <li>Vous choisissez le bon et le réglez par carte.</li>
-          <li>Sous 48 h, vous recevez le bon par e-mail, avec un code unique, à imprimer ou à transférer.</li>
+          <li>Vous cliquez sur « Payer et offrir » : une page de paiement sécurisée Stripe s'ouvre. Vous payez par carte et indiquez le prénom de la personne et, si vous le souhaitez, un petit mot.</li>
+          <li>Stripe vous envoie aussitôt le reçu, et vous revenez sur ce site.</li>
+          <li>Sous 48 h, Gaël vous envoie le bon par e-mail, avec un code unique, à imprimer ou à transférer.</li>
           <li>La personne réserve sa date sur ce site en indiquant son code : elle n'a rien à payer.</li>
         </ol>
-        <p class="note">Le bon est valable un an à compter de l'achat. Il peut être échangé contre une autre séance de même valeur, mais il n'est pas remboursable.</p>
+        <p class="note">Le bon est valable un an à compter de l'achat. Il peut être échangé contre une autre séance de même valeur, mais il n'est pas remboursable. Gaël n'a jamais accès à vos données de carte.</p>
       </div>
     </section>
 

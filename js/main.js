@@ -172,12 +172,19 @@
      (ou bonIndividuel, bonCollectif, bonApnee). S'il a un lien Stripe dans
      js/config.js, il y mène ; sinon il reste en mode démonstration. */
 
+  var paiementsManquants = 0;
   document.querySelectorAll("[data-paiement]").forEach(function (bouton) {
     var lien = (reglages.paiement || {})[bouton.dataset.paiement];
     if (lien) {
       bouton.href = lien;
+    } else {
+      paiementsManquants++;
     }
   });
+  var avisDemoPaiement = document.getElementById("demo-paiement");
+  if (avisDemoPaiement && paiementsManquants > 0) {
+    avisDemoPaiement.hidden = false;
+  }
 
   /* 4. Page de confirmation ---------------------------------------------- */
 
