@@ -1279,3 +1279,30 @@ img.photo {
     min-height: 320px;
   }
 }
+
+/* Pied de page plus compact ------------------------------------------------ */
+
+.pied {
+  font-size: 0.875rem;
+  border-top: 4px solid var(--bleu);
+}
+
+.pied__grille {
+  gap: 16px 40px;
+  padding: 24px 24px;
+}
+
+.pied__bloc {
+  gap: 4px;
+}
+
+.pied__nom {
+  font-size: 1rem;
+}
+
+.pied__bloc:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 4px 24px;
+  align-content: start;
+}

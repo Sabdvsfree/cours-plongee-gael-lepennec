@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20261123">
 </head>
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
@@ -47,6 +47,56 @@
       <img class="photo" src="https://images.pexels.com/photos/3041866/pexels-photo-3041866.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un apnéiste au-dessus du fond (photo d'illustration)" loading="lazy">
     </section>
 
+    <!-- Textes proposés : à relire et ajuster avec Gaël -->
+    <section class="section section--blanche">
+      <div class="conteneur">
+        <div class="entete-section">
+          <h2>Comment se passe une séance</h2>
+          <p class="chapeau">Rendez-vous à [NOM ET ADRESSE DE LA FOSSE], en Île-de-France. Ici, pas de chrono ni de record : on avance à votre rythme, et ce sont vos sensations qui comptent.</p>
+        </div>
+        <ol class="deroule">
+          <li>Au sec : exercices de respiration et de relaxation, puis les règles de sécurité de l'apnée.</li>
+          <li>Mise à l'eau : quelques minutes en surface, avec masque et tuba, pour vous sentir à l'aise.</li>
+          <li>Apnée statique : allongé à la surface, visage dans l'eau, vous découvrez combien de temps vous tenez sans forcer.</li>
+          <li>Apnée dynamique et descente : quelques mètres sous l'eau à l'horizontale, puis une descente douce le long d'un câble, en apprenant à équilibrer vos oreilles.</li>
+          <li>Après la séance : un retour sur vos sensations et des conseils pour progresser.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="fiche">
+          <div class="fiche__bloc">
+            <h3>Compris dans le prix</h3>
+            <ul>
+              <li>L'encadrement par un moniteur diplômé</li>
+              <li>L'entrée de la fosse</li>
+              <li>Le matériel : combinaison, masque, tuba, palmes et lest</li>
+            </ul>
+          </div>
+          <div class="fiche__bloc">
+            <h3>À apporter</h3>
+            <ul>
+              <li>Un maillot de bain près du corps et un bonnet si la fosse l'exige</li>
+              <li>Une serviette et de quoi vous doucher</li>
+              <li>Un certificat médical de non contre-indication à l'apnée, de moins d'un an</li>
+              <li>Une autorisation parentale pour les mineurs</li>
+            </ul>
+          </div>
+          <div class="fiche__bloc">
+            <h3>Votre sécurité</h3>
+            <ul>
+              <li>Jamais d'apnée seul : toujours en binôme, sous l'œil du moniteur</li>
+              <li>Aucune performance demandée : on s'arrête dès que l'envie de respirer arrive</li>
+              <li>Un repas léger, au moins deux heures avant la séance</li>
+              <li>À signaler avant de réserver : asthme, problème cardiaque, épilepsie, otite ou sinusite en cours, grossesse, opération récente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Formules : à confirmer avec Gaël (produits, prix, diplôme d'apnée) -->
     <section class="section section--blanche" id="formules">
       <div class="conteneur">
@@ -61,10 +111,10 @@
             <h3>Découverte de l'apnée</h3>
             <p>Une première séance pour apprendre à respirer, à vous relâcher et à faire vos premières immersions.</p>
             <ul class="chiffres">
-              <li><strong>[DURÉE]</strong>de séance</li>
-              <li><strong>[PROFONDEUR] m</strong>au maximum</li>
-              <li><strong>Dès [ÂGE] ans</strong>avec accord parental</li>
-              <li><strong>[NOMBRE] élèves</strong>au maximum</li>
+              <li><strong>1 h 30</strong>dont 1 h dans l'eau</li>
+              <li><strong>6 m</strong>au maximum</li>
+              <li><strong>Dès 12 ans</strong>avec accord parental</li>
+              <li><strong>6 élèves</strong>au maximum</li>
             </ul>
             <p class="carte__prix">[PRIX] €</p>
             <a class="bouton bouton--principal" href="reservation.html?offre=apnee-decouverte">Réserver une découverte</a>
@@ -75,10 +125,10 @@
             <h3>Cours collectifs d'apnée</h3>
             <p>Des séances régulières en petit groupe : apnée statique, dynamique et descente au palier.</p>
             <ul class="chiffres">
-              <li><strong>[NOMBRE] apnéistes</strong>au maximum</li>
-              <li><strong>[DURÉE]</strong>de séance</li>
+              <li><strong>6 apnéistes</strong>au maximum</li>
+              <li><strong>1 h 30</strong>de séance</li>
               <li><strong>[JOURS]</strong>créneaux réguliers</li>
-              <li><strong>Dès [ÂGE] ans</strong>[NIVEAU REQUIS]</li>
+              <li><strong>Dès 12 ans</strong>après une découverte</li>
             </ul>
             <p class="carte__prix">[PRIX] € la séance</p>
             <a class="bouton bouton--secondaire" href="reservation.html?offre=apnee-collectif">Rejoindre un cours</a>
@@ -87,12 +137,12 @@
           <article class="carte carte--blanche">
             <span class="surtitre">En solo</span>
             <h3>Cours individuels d'apnée</h3>
-            <p>Un moniteur pour vous seul, pour gagner en confiance ou travailler un point précis.</p>
+            <p>Un moniteur pour vous seul, pour gagner en confiance, dépasser une appréhension ou travailler un point précis.</p>
             <ul class="chiffres">
               <li><strong>1 pour 1</strong>avec le moniteur</li>
-              <li><strong>[DURÉE]</strong>de séance</li>
+              <li><strong>1 h</strong>dans l'eau</li>
               <li><strong>À la carte</strong>selon les créneaux de la fosse</li>
-              <li><strong>Dès [ÂGE] ans</strong>[NIVEAUX ACCEPTÉS]</li>
+              <li><strong>Dès 12 ans</strong>tous niveaux</li>
             </ul>
             <p class="carte__prix">[PRIX] € la séance</p>
             <a class="bouton bouton--secondaire" href="reservation.html?offre=apnee-individuel">Réserver une séance</a>
@@ -104,52 +154,6 @@
     </section>
 
     <section class="section">
-      <div class="conteneur">
-        <div class="entete-section">
-          <h2>Comment se passe une séance</h2>
-          <p class="chapeau">Rendez-vous à [NOM ET ADRESSE DE LA FOSSE], à [DURÉE] de Paris.</p>
-        </div>
-        <ol class="deroule">
-          <li>Au sec : respiration, relaxation et règles de sécurité.</li>
-          <li>Mise à l'eau : exercices en surface pour vous sentir à l'aise.</li>
-          <li>Dans l'eau : [EXERCICES : apnée statique, dynamique, descente le long d'un câble], toujours en binôme surveillé.</li>
-          <li>Après la séance : un retour sur vos sensations et des conseils pour la suite.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section section--blanche">
-      <div class="conteneur">
-        <div class="fiche">
-          <div class="fiche__bloc">
-            <h3>Compris dans le prix</h3>
-            <ul>
-              <li>L'encadrement par un moniteur diplômé</li>
-              <li>L'entrée de la fosse</li>
-              <li>[MATÉRIEL : combinaison, masque, palmes, lest]</li>
-            </ul>
-          </div>
-          <div class="fiche__bloc">
-            <h3>À apporter</h3>
-            <ul>
-              <li>Un maillot de bain [RÈGLES DE LA FOSSE] et une serviette</li>
-              <li>[CERTIFICAT MÉDICAL, SI EXIGÉ]</li>
-              <li>[AUTORISATION PARENTALE POUR LES MINEURS]</li>
-            </ul>
-          </div>
-          <div class="fiche__bloc">
-            <h3>Sécurité</h3>
-            <ul>
-              <li>Jamais d'apnée seul : toujours en binôme, sous l'œil du moniteur</li>
-              <li>Progression à votre rythme, sans chercher la performance</li>
-              <li>[SANTÉ : situations à signaler avant de réserver]</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--marine">
       <div class="conteneur appel">
         <div class="colonne-texte">
           <h2>Plutôt envie de respirer sous l'eau ?</h2>
@@ -165,7 +169,7 @@
     <div class="conteneur pied__grille">
       <div class="pied__bloc">
         <span class="pied__nom">Gaël Le Pennec · Apnée et plongée en fosse</span>
-        <span>Paris et Île-de-France · Déplacements : [ZONE DE DÉPLACEMENT]</span>
+        <span>Paris et Île-de-France · Déplacements sur demande</span>
         <span>[DIPLÔME] · Carte professionnelle n° [NUMÉRO]</span>
       </div>
       <div class="pied__bloc">
@@ -185,7 +189,7 @@
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/config.js?v=20261123"></script>
+  <script src="js/main.js?v=20261123"></script>
 </body>
 </html>
