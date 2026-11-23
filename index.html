@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gaël Le Pennec · Moniteur de plongée à Paris — baptêmes et cours en fosse</title>
-  <meta name="description" content="Baptême de plongée en fosse, cours collectifs et cours individuels à Paris et en Île-de-France avec un moniteur diplômé. Toute l'année, matériel fourni, bons cadeaux.">
+  <title>Gaël Le Pennec · Apnée et plongée en fosse à Paris — découvertes, baptêmes et cours</title>
+  <meta name="description" content="Apnée et plongée en fosse à Paris et en Île-de-France avec un moniteur diplômé : découverte de l'apnée, baptême de plongée, cours collectifs et individuels. Matériel et entrée compris.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
@@ -13,16 +13,15 @@
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <div class="bandeau">Toute l'année en fosse, près de Paris · Entrée de la fosse et matériel compris · Bons cadeaux disponibles</div>
+  <div class="bandeau">Apnée et plongée en fosse, près de Paris · Entrée de la fosse et matériel compris · Paiement sur place</div>
 
   <header class="entete">
     <div class="conteneur entete__barre">
-      <a class="logo" href="index.html">Gaël Le Pennec<span class="logo__metier">Moniteur de plongée en fosse</span></a>
+      <a class="logo" href="index.html"><img class="logo__image" src="images/logo.png" alt="GLPlongée, accueil" width="231" height="120"><span class="logo__metier">Apnée &amp; plongée<br>en fosse</span></a>
       <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav class="nav" id="menu" aria-label="Navigation principale">
-        <a href="bapteme.html">Baptême</a>
-        <a href="cours-collectifs.html">Cours collectifs</a>
-        <a href="cours-individuels.html">Cours individuels</a>
+        <a href="apnee.html">Apnée</a>
+        <a href="plongee.html">Plongée</a>
         <a href="offrir.html">Bon cadeau</a>
         <a href="#moniteur">Votre moniteur</a>
         <!-- Remplacer le numéro dans href (format international) et dans le texte -->
@@ -37,142 +36,143 @@
     <!-- Accroche -->
     <section class="conteneur accroche">
       <div class="accroche__texte">
-        <p class="surtitre">Plongée en fosse à Paris et en Île-de-France</p>
-        <h1>Respirez sous l'eau pour la première fois, en toute confiance.</h1>
-        <p class="chapeau">Baptêmes, cours collectifs et cours individuels en fosse de plongée, toute l'année, avec un moniteur diplômé. À votre rythme, à l'abri de la météo.</p>
+        <p class="surtitre">Apnée et plongée en fosse, à Paris et en Île-de-France</p>
+        <h1>Sous l'eau, en toute confiance, avec le même moniteur.</h1>
+        <p class="chapeau">Découvertes, baptêmes et cours, en petit groupe ou en tête-à-tête, toute l'année. Entrée de la fosse et matériel compris.</p>
         <div class="groupe-boutons">
-          <a class="bouton bouton--principal" href="reservation.html?offre=bapteme">Réserver un baptême</a>
-          <a class="bouton bouton--secondaire" href="#offres">Voir toutes les formules</a>
+          <a class="bouton bouton--principal" href="#activites">Choisir mon activité</a>
+          <a class="bouton bouton--secondaire" href="offrir.html">Offrir un bon cadeau</a>
         </div>
-        <!-- Avis : remplacer par la vraie note quand elle existe, sinon supprimer la ligne -->
-        <p class="note-avis">[NOTE]/5 sur [NOMBRE] avis</p>
         <ul class="reassurance">
           <li>Moniteur diplômé</li>
           <li>Entrée de la fosse et matériel compris</li>
-          <li>Un moniteur pour un élève en baptême</li>
+          <li>Paiement sur place, le jour J</li>
         </ul>
       </div>
       <!-- À remplacer par : <img src="images/accueil.jpg" alt="…"> -->
-      <div class="photo-provisoire">[PHOTO : un baptême en fosse, plongeur souriant et moniteur]</div>
+      <!-- Photo d'illustration à remplacer : Gaël avec un élève, en fosse -->
+      <img class="photo" src="https://images.pexels.com/photos/9229067/pexels-photo-9229067.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Deux personnes sous l'eau, masque et palmes (photo d'illustration)" loading="lazy">
+    </section>
+
+    <!-- Les deux entrées : apnée et plongée -->
+    <section class="section section--blanche" id="activites">
+      <div class="conteneur">
+        <div class="entete-section">
+          <h2>Apnée ou plongée ?</h2>
+          <p class="chapeau">Choisissez votre discipline : toutes les formules et leurs prix sont sur chaque page.</p>
+        </div>
+        <div class="grille grille--2">
+
+          <a class="entree" href="apnee.html">
+            <!-- Photo d'illustration à remplacer : apnéiste en fosse -->
+      <img class="photo" src="https://images.pexels.com/photos/31363206/pexels-photo-31363206.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Une apnéiste glisse sous l'eau (photo d'illustration)" loading="lazy">
+            <div class="entree__texte">
+              <span class="surtitre">Sans bouteille</span>
+              <h3>Apnée</h3>
+              <p>Apprenez à vous détendre, à retenir votre souffle et à descendre en sécurité.</p>
+              <ul class="entree__formules">
+                <li>Découverte</li>
+                <li>Cours collectifs</li>
+                <li>Cours individuels</li>
+              </ul>
+              <span class="entree__lien">Découvrir l'apnée <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="entree" href="plongee.html">
+            <!-- Photo d'illustration à remplacer : baptême de plongée en fosse -->
+      <img class="photo" src="https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un plongeur en bouteille sous l'eau (photo d'illustration)" loading="lazy">
+            <div class="entree__texte">
+              <span class="surtitre">Avec bouteille</span>
+              <h3>Plongée</h3>
+              <p>Respirez sous l'eau pour la première fois, puis progressez à votre rythme.</p>
+              <ul class="entree__formules">
+                <li>Baptême</li>
+                <li>Cours collectifs</li>
+                <li>Cours individuels</li>
+              </ul>
+              <span class="entree__lien">Découvrir la plongée <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pourquoi moi -->
+    <section class="section" id="pourquoi">
+      <div class="conteneur">
+        <div class="entete-section">
+          <h2>Pourquoi plonger avec Gaël</h2>
+        </div>
+        <div class="grille grille--4">
+          <article class="carte carte--blanche">
+            <h3>Petit groupe</h3>
+            <p>Au maximum [NOMBRE] élèves par séance, pour que chacun soit suivi.</p>
+          </article>
+          <article class="carte carte--blanche">
+            <h3>Cours privé</h3>
+            <p>Un moniteur pour vous seul, si vous préférez avancer en tête-à-tête.</p>
+          </article>
+          <article class="carte carte--blanche">
+            <h3>Suivi personnalisé</h3>
+            <p>Le même moniteur à chaque séance, qui connaît vos progrès.</p>
+          </article>
+          <article class="carte carte--blanche">
+            <h3>Tout compris</h3>
+            <p>Entrée de la fosse et matériel inclus. Aucun frais ajouté sur place.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- Votre moniteur -->
     <section class="section section--blanche" id="moniteur" style="border-bottom: none">
       <div class="conteneur moniteur">
-        <div class="photo-provisoire">[PHOTO : portrait du moniteur, en tenue, souriant]</div>
+        <!-- Photo d'illustration à remplacer : portrait de Gaël, en tenue, souriant -->
+      <img class="photo" src="https://images.pexels.com/photos/9307240/pexels-photo-9307240.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un plongeur en apnée au-dessus du fond (photo d'illustration)" loading="lazy">
         <div class="colonne-texte">
           <p class="surtitre">Votre moniteur</p>
           <h2>Gaël, [NOMBRE] ans de plongée</h2>
           <p class="chapeau">[DEUX OU TROIS PHRASES À LA PREMIÈRE PERSONNE : comment il a commencé, ce qu'il aime transmettre, pourquoi il enseigne en fosse.]</p>
           <ul class="liste-garanties">
-            <li>[DIPLÔME PROFESSIONNEL ET ANNÉE]</li>
-            <li>[ORGANISME DE CERTIFICATION : FFESSM, PADI ou SSI]</li>
+            <li>[DIPLÔME DE PLONGÉE ET ANNÉE]</li>
+            <li>[DIPLÔME D'APNÉE ET ANNÉE]</li>
+            <li>[ORGANISME : FFESSM, PADI, SSI ou AIDA]</li>
             <li>Carte professionnelle n° [NUMÉRO]</li>
-            <li>[NOMBRE] plongées encadrées · Formé aux premiers secours</li>
             <li>Assurance responsabilité civile professionnelle</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Les trois offres -->
-    <section class="section" id="offres">
-      <div class="conteneur">
-        <div class="entete-section">
-          <h2>Trois façons de plonger</h2>
-          <p class="chapeau">Pour une première bulle, en petit groupe ou en tête-à-tête avec le moniteur : choisissez votre formule.</p>
-        </div>
-        <div class="grille grille--3">
-
-          <article class="carte carte--blanche">
-            <span class="surtitre">Découvrir</span>
-            <h3>Baptême de plongée</h3>
-            <p>Votre première immersion en fosse, seul avec le moniteur, sans aucune connaissance préalable.</p>
-            <ul class="chiffres">
-              <li><strong>[DURÉE]</strong>sous l'eau</li>
-              <li><strong>[PROFONDEUR] m</strong>au maximum</li>
-              <li><strong>Dès [ÂGE] ans</strong>avec accord parental</li>
-              <li><strong>1 pour 1</strong>avec le moniteur</li>
-            </ul>
-            <p class="carte__prix">[PRIX] €</p>
-            <a class="bouton bouton--principal" href="reservation.html?offre=bapteme">Réserver un baptême</a>
-            <a class="carte__lien" href="bapteme.html">Tout savoir sur le baptême</a>
-          </article>
-
-          <article class="carte carte--blanche">
-            <span class="surtitre">En groupe</span>
-            <h3>Cours collectifs</h3>
-            <p>Des séances en petit groupe, en fosse, pour apprendre et progresser ensemble.</p>
-            <ul class="chiffres">
-              <li><strong>[NOMBRE] plongeurs</strong>au maximum</li>
-              <li><strong>[DURÉE]</strong>de séance</li>
-              <li><strong>[JOURS]</strong>créneaux réguliers</li>
-              <li><strong>Dès [ÂGE] ans</strong>[NIVEAU REQUIS]</li>
-            </ul>
-            <p class="carte__prix">[PRIX] € la séance</p>
-            <a class="bouton bouton--secondaire" href="reservation.html?offre=collectif">Rejoindre un cours</a>
-            <a class="carte__lien" href="cours-collectifs.html">Tout savoir sur les cours collectifs</a>
-          </article>
-
-          <article class="carte carte--blanche">
-            <span class="surtitre">En solo</span>
-            <h3>Cours individuels</h3>
-            <p>Un moniteur pour vous seul : débuter en douceur, reprendre après une pause ou travailler un point précis.</p>
-            <ul class="chiffres">
-              <li><strong>1 pour 1</strong>avec le moniteur</li>
-              <li><strong>[DURÉE]</strong>de séance</li>
-              <li><strong>À la carte</strong>selon les créneaux de la fosse</li>
-              <li><strong>Dès [ÂGE] ans</strong>[NIVEAUX ACCEPTÉS]</li>
-            </ul>
-            <p class="carte__prix">[PRIX] € la séance</p>
-            <a class="bouton bouton--secondaire" href="reservation.html?offre=individuel">Réserver une séance</a>
-            <a class="carte__lien" href="cours-individuels.html">Tout savoir sur les cours individuels</a>
-          </article>
-
-        </div>
-        <p class="note">Tous les prix comprennent l'encadrement, le matériel indiqué et l'entrée de la fosse. Aucun frais ajouté sur place.</p>
-      </div>
-    </section>
-
-    <!-- Parcours -->
-    <section class="section section--marine" id="parcours">
-      <div class="conteneur deux-colonnes">
-        <div class="colonne-texte">
-          <p class="surtitre">Votre parcours</p>
-          <h2>Du premier baptême à vos progrès, avec le même moniteur.</h2>
-          <p class="chapeau">Chaque étape prépare la suivante. Vous avancez quand vous êtes prêt, sans changer d'interlocuteur.</p>
-          <a class="bouton bouton--secondaire" href="reservation.html">Commencer</a>
-        </div>
-        <ol class="parcours">
-          <li>Baptême en fosse : une première immersion accompagnée</li>
-          <li>Cours collectifs : apprendre et progresser en petit groupe</li>
-          <li>Cours individuels : avancer à votre rythme sur vos points faibles</li>
-          <li>[SUITE POSSIBLE : certification, sortie en mer — à préciser]</li>
-        </ol>
-      </div>
-    </section>
-
     <!-- Galerie -->
-    <section class="section section--blanche">
+    <section class="section">
       <div class="conteneur">
         <div class="entete-section">
-          <h2>Là où vous allez plonger</h2>
-          <p class="chapeau">[UNE PHRASE SUR LA FOSSE : profondeur, paliers, température de l'eau, accès depuis Paris]</p>
+          <h2>En images</h2>
+          <p class="chapeau">D'autres photos sur <a href="[LIEN INSTAGRAM]">Instagram</a>.</p>
         </div>
-        <!-- Six photos minimum : plongeurs souriants, la fosse, mise à l'eau -->
+        <!-- Photos réelles, avec l'accord des personnes -->
         <div class="galerie">
-          <div class="photo-provisoire">[PHOTO : baptême]</div>
-          <div class="photo-provisoire">[PHOTO : la fosse vue du fond]</div>
-          <div class="photo-provisoire">[PHOTO : mise à l'eau]</div>
-          <div class="photo-provisoire">[PHOTO : exercice technique]</div>
-          <div class="photo-provisoire">[PHOTO : cours collectif]</div>
-          <div class="photo-provisoire">[PHOTO : sortie en mer]</div>
+          <!-- Photo d'illustration à remplacer : baptême -->
+      <img class="photo" src="https://images.pexels.com/photos/2405643/pexels-photo-2405643.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un plongeur en bouteille près du fond (photo d'illustration)" loading="lazy">
+          <!-- Photo d'illustration à remplacer : apnée -->
+      <img class="photo" src="https://images.pexels.com/photos/4794735/pexels-photo-4794735.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Une apnéiste dans une eau claire (photo d'illustration)" loading="lazy">
+          <!-- Photo d'illustration à remplacer : la fosse vue du fond -->
+      <img class="photo" src="https://images.pexels.com/photos/8688163/pexels-photo-8688163.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="La lumière vue depuis le fond d'un bassin (photo d'illustration)" loading="lazy">
+          <!-- Photo d'illustration à remplacer : mise à l'eau -->
+      <img class="photo" src="https://images.pexels.com/photos/8688173/pexels-photo-8688173.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un nageur sous l'eau dans un bassin, entouré de bulles (photo d'illustration)" loading="lazy">
+          <!-- Photo d'illustration à remplacer : cours collectif -->
+      <img class="photo" src="https://images.pexels.com/photos/7714640/pexels-photo-7714640.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Deux personnes qui plongent ensemble (photo d'illustration)" loading="lazy">
+          <!-- Photo d'illustration à remplacer : Gaël et un élève -->
+      <img class="photo" src="https://images.pexels.com/photos/7001663/pexels-photo-7001663.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Un plongeur sous l'eau (photo d'illustration)" loading="lazy">
         </div>
       </div>
     </section>
 
     <!-- Avis -->
-    <section class="section" id="avis">
+    <section class="section section--blanche" id="avis">
       <div class="conteneur">
         <div class="entete-section">
           <h2>Ils ont plongé avec Gaël</h2>
@@ -183,26 +183,14 @@
             <footer>[PRÉNOM DE L'ÉLÈVE], baptême, [MOIS ANNÉE]</footer>
           </blockquote>
           <blockquote>
-            <p>[AVIS : un cours collectif, l'ambiance du groupe]</p>
-            <footer>[PRÉNOM DE L'ÉLÈVE], cours collectif, [MOIS ANNÉE]</footer>
+            <p>[AVIS : une découverte de l'apnée]</p>
+            <footer>[PRÉNOM DE L'ÉLÈVE], apnée, [MOIS ANNÉE]</footer>
           </blockquote>
           <blockquote>
-            <p>[AVIS : un parent, baptême d'un enfant]</p>
-            <footer>[PRÉNOM DE L'ÉLÈVE], baptême enfant, [MOIS ANNÉE]</footer>
+            <p>[AVIS : un cours, la progression]</p>
+            <footer>[PRÉNOM DE L'ÉLÈVE], cours individuel, [MOIS ANNÉE]</footer>
           </blockquote>
         </div>
-      </div>
-    </section>
-
-    <!-- Déplacements -->
-    <section class="section section--blanche" id="deplacements" style="border-bottom: none">
-      <div class="conteneur appel">
-        <div class="colonne-texte">
-          <p class="surtitre">Sur mesure</p>
-          <h2>Un groupe, une autre fosse, une sortie en mer ?</h2>
-          <p class="chapeau">Gaël se déplace : [GROUPES, ENTREPRISES, AUTRES FOSSES ET PISCINES, SORTIES OU STAGES EN MER — À PRÉCISER].</p>
-        </div>
-        <a class="bouton bouton--secondaire" href="reservation.html?offre=autre">Demander un devis</a>
       </div>
     </section>
 
@@ -211,11 +199,11 @@
       <div class="conteneur appel">
         <div class="colonne-texte">
           <p class="surtitre">À offrir</p>
-          <h2>Offrez un baptême de plongée</h2>
+          <h2>Offrez une plongée ou une séance d'apnée</h2>
           <p class="chapeau">Payé en ligne, envoyé par e-mail avec un code, valable [DURÉE]. Aucune date à fixer : la personne réserve la sienne avec son code.</p>
         </div>
         <div class="groupe-boutons">
-          <a class="bouton bouton--principal" href="offrir.html">Offrir un baptême</a>
+          <a class="bouton bouton--principal" href="offrir.html">Offrir un bon cadeau</a>
           <a class="bouton bouton--secondaire" href="reservation.html?bon=1">J'ai reçu un bon cadeau</a>
         </div>
       </div>
@@ -226,36 +214,36 @@
       <div class="conteneur">
         <div class="entete-section">
           <h2>Questions fréquentes</h2>
-          <p class="chapeau">Une autre question ? Appelez le [TÉLÉPHONE] ou écrivez à [ADRESSE E-MAIL].</p>
+          <p class="chapeau">Une autre question ? Appelez le [TÉLÉPHONE] ou écrivez sur WhatsApp.</p>
         </div>
         <div class="faq">
           <details>
-            <summary>Faut-il savoir nager ?</summary>
-            <p>[RÉPONSE : sa règle pour le baptême, puis pour les cours]</p>
+            <summary>Quelle différence entre l'apnée et la plongée ?</summary>
+            <p>En plongée, vous respirez grâce à une bouteille d'air et restez longtemps sous l'eau. En apnée, vous descendez sans bouteille, en retenant votre souffle : on travaille surtout la détente et la respiration. Les deux se pratiquent en fosse, encadrées par Gaël.</p>
           </details>
           <details>
-            <summary>À partir de quel âge peut-on plonger ?</summary>
-            <p>[RÉPONSE : âge minimum par offre, autorisation parentale]</p>
+            <summary>Faut-il savoir nager ?</summary>
+            <p>[RÉPONSE : sa règle pour l'apnée, le baptême et les cours]</p>
+          </details>
+          <details>
+            <summary>À partir de quel âge ?</summary>
+            <p>[RÉPONSE : âge minimum par activité, autorisation parentale]</p>
           </details>
           <details>
             <summary>Faut-il un certificat médical ?</summary>
-            <p>[RÉPONSE : pour le baptême, pour les cours, contre-indications à signaler]</p>
-          </details>
-          <details>
-            <summary>Je porte des lunettes ou des lentilles, est-ce possible ?</summary>
-            <p>[RÉPONSE]</p>
+            <p>[RÉPONSE : par activité, contre-indications à signaler]</p>
           </details>
           <details>
             <summary>J'ai peur de ne pas y arriver, comment ça se passe ?</summary>
             <p>[RÉPONSE : progressivité, possibilité de remonter à tout moment, moniteur à côté]</p>
           </details>
           <details>
-            <summary>Où ont lieu les plongées ?</summary>
+            <summary>Où ont lieu les séances ?</summary>
             <p>[RÉPONSE : nom et adresse des fosses, accès en transports, parking]</p>
           </details>
           <details>
-            <summary>L'entrée de la fosse est-elle comprise dans le prix ?</summary>
-            <p>[RÉPONSE : oui, ou montant à régler sur place]</p>
+            <summary>Comment se règle la séance ?</summary>
+            <p>Rien n'est à payer en ligne. Vous réglez le jour de la séance, sur place : en espèces, par chèque à l'ordre de Gaël Le Pennec, ou par carte bancaire. La carte se paie sans contact sur le téléphone de Gaël, ou en scannant un QR code avec le vôtre. Le paiement par carte est sécurisé par Stripe.</p>
           </details>
           <details>
             <summary>Peut-on prendre l'avion après une plongée ?</summary>
@@ -273,7 +261,7 @@
     <section class="section">
       <div class="conteneur appel">
         <div class="colonne-texte">
-          <h2>Prêt pour votre première bulle ?</h2>
+          <h2>Prêt à vous jeter à l'eau ?</h2>
           <p class="chapeau">Envoyez votre demande en deux minutes. Réponse sous [DÉLAI].</p>
         </div>
         <a class="bouton bouton--principal" href="reservation.html">Réserver</a>
@@ -285,7 +273,7 @@
   <footer class="pied">
     <div class="conteneur pied__grille">
       <div class="pied__bloc">
-        <span class="pied__nom">Gaël Le Pennec · Moniteur de plongée</span>
+        <span class="pied__nom">Gaël Le Pennec · Apnée et plongée en fosse</span>
         <span>Paris et Île-de-France · Déplacements : [ZONE DE DÉPLACEMENT]</span>
         <span>[DIPLÔME] · Carte professionnelle n° [NUMÉRO]</span>
       </div>
@@ -295,7 +283,8 @@
         <span>[RÉSEAUX SOCIAUX]</span>
       </div>
       <div class="pied__bloc">
-        <a href="bapteme.html">Baptême de plongée</a>
+        <a href="apnee.html">Apnée</a>
+        <a href="plongee.html">Plongée</a>
         <a href="reservation.html">Réserver</a>
         <a href="offrir.html">Offrir un bon cadeau</a>
         <a href="reservation.html?bon=1">Utiliser un bon cadeau</a>

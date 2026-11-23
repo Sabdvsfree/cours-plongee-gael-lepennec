@@ -1066,3 +1066,182 @@ a:hover {
   font-size: 0.8125rem;
   color: var(--texte-doux);
 }
+
+/* Accueil : les deux entrées Apnée et Plongée ------------------------------ */
+
+.grille--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.entree {
+  display: flex;
+  flex-direction: column;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.entree:hover {
+  border-color: var(--bordure-forte);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(14, 42, 59, 0.08);
+}
+
+.entree:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+.entree .photo-provisoire {
+  min-height: 280px;
+  border: none;
+  border-bottom: 1px dashed var(--bordure-forte);
+  border-radius: 0;
+}
+
+.entree__texte {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entree__texte h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.entree__texte p {
+  color: var(--texte-doux);
+  margin: 0;
+}
+
+.entree__formules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entree__formules li {
+  background: var(--fond);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  color: var(--texte);
+}
+
+.entree__lien {
+  font-weight: 600;
+  color: var(--bleu-fonce);
+  margin-top: 4px;
+}
+
+.entree:hover .entree__lien {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .grille--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entree .photo-provisoire {
+    min-height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entree {
+    transition: none;
+  }
+
+  .entree:hover {
+    transform: none;
+  }
+}
+
+/* Photos (d'illustration pour l'instant) --------------------------------- */
+
+img.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #dce9ee;
+  color: var(--texte-doux);
+  font-size: 0.875rem;
+}
+
+.galerie img.photo {
+  min-height: 220px;
+  height: 220px;
+  border-radius: 12px;
+}
+
+.moniteur img.photo {
+  min-height: 380px;
+  height: 440px;
+}
+
+.entree img.photo {
+  min-height: 280px;
+  height: 280px;
+  border-radius: 0;
+}
+
+@media (max-width: 760px) {
+  img.photo {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .entree img.photo {
+    min-height: 200px;
+    height: 200px;
+  }
+
+  .moniteur img.photo {
+    min-height: 320px;
+    height: 320px;
+  }
+}
+
+/* Logo GLPlongée (image) ------------------------------------------------- */
+
+.logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo__image {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+
+.logo__metier {
+  padding-left: 12px;
+  border-left: 1px solid var(--bordure);
+  line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+  .logo__image {
+    height: 52px;
+  }
+
+  .logo__metier {
+    display: none;
+  }
+}

@@ -111,7 +111,7 @@
         access_key: reglages.cleFormulaire,
         subject: "Nouvelle demande : " + libelleOffre + " — " + nom + (avecBon ? " — BON CADEAU" : ""),
         from_name: "Site de réservation",
-        "Plongée": libelleOffre,
+        "Activité": libelleOffre,
         "Date souhaitée": dateLisible || "à convenir",
         "Nombre de personnes": String(personnes),
         name: nom,
@@ -169,7 +169,7 @@
 
   /* 3. Bons cadeaux ------------------------------------------------------
      Chaque bouton « Payer et offrir » porte data-paiement="bonBapteme"
-     (ou bonIndividuel, bonCollectif). S'il a un lien Stripe dans
+     (ou bonIndividuel, bonCollectif, bonApnee). S'il a un lien Stripe dans
      js/config.js, il y mène ; sinon il reste en mode démonstration. */
 
   document.querySelectorAll("[data-paiement]").forEach(function (bouton) {

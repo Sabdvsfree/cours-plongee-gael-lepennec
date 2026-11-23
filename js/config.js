@@ -18,9 +18,10 @@ window.REGLAGES = {
   paiement: {
     bonBapteme: "",
     bonIndividuel: "",
-    bonCollectif: ""
+    bonCollectif: "",
+    bonApnee: ""
   }
 
-  /* Le lien de paiement de l'ACOMPTE n'est pas sur le site :
-     le moniteur l'envoie dans son e-mail de confirmation de date. */
+  /* Pas d'acompte : les séances se règlent sur place, le jour J
+     (espèces, chèque, ou carte via l'application Stripe Dashboard). */
 };

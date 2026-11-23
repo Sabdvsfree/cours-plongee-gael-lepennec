@@ -13,16 +13,15 @@
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <div class="bandeau">Toute l'année en fosse, près de Paris · Entrée de la fosse et matériel compris · Bons cadeaux disponibles</div>
+  <div class="bandeau">Apnée et plongée en fosse, près de Paris · Entrée de la fosse et matériel compris · Paiement sur place</div>
 
   <header class="entete">
     <div class="conteneur entete__barre">
-      <a class="logo" href="index.html">Gaël Le Pennec<span class="logo__metier">Moniteur de plongée en fosse</span></a>
+      <a class="logo" href="index.html"><img class="logo__image" src="images/logo.png" alt="GLPlongée, accueil" width="231" height="120"><span class="logo__metier">Apnée &amp; plongée<br>en fosse</span></a>
       <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav class="nav" id="menu" aria-label="Navigation principale">
-        <a href="bapteme.html">Baptême</a>
-        <a href="cours-collectifs.html">Cours collectifs</a>
-        <a href="cours-individuels.html">Cours individuels</a>
+        <a href="apnee.html">Apnée</a>
+        <a href="plongee.html">Plongée</a>
         <a href="offrir.html">Bon cadeau</a>
         <a href="index.html#moniteur">Votre moniteur</a>
         <!-- Remplacer le numéro dans href (format international) et dans le texte -->
@@ -36,15 +35,15 @@
 
     <div class="reservation__infos">
       <div class="entete-section" style="margin-bottom: 0">
-        <h1 style="font-size: clamp(2rem, 4vw, 2.75rem)">Réserver une plongée</h1>
-        <p class="chapeau">Indiquez la plongée et la date souhaitée. Rien à payer maintenant : Gaël vérifie d'abord le créneau.</p>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.75rem)">Réserver une séance</h1>
+        <p class="chapeau">Indiquez l'activité et la date souhaitée. Rien à payer en ligne : vous réglez sur place, le jour J.</p>
       </div>
       <ol class="deroule">
         <li>Vous envoyez votre demande. Gaël la reçoit par e-mail.</li>
-        <li>Sous [DÉLAI], il vous confirme la date par e-mail, avec un lien de paiement sécurisé.</li>
-        <li>Vous réglez l'acompte de [MONTANT] par carte : votre créneau est bloqué.</li>
-        <li>Le solde se règle sur place, [MOYEN DE PAIEMENT SUR PLACE].</li>
+        <li>Sous [DÉLAI], il vous confirme la date par e-mail.</li>
+        <li>Le jour J, vous réglez sur place : <strong>espèces, chèque ou carte bancaire</strong>.</li>
       </ol>
+      <p class="petit">La carte se paie sans contact sur le téléphone de Gaël, ou en scannant un QR code avec le vôtre. Paiement sécurisé par Stripe.</p>
       <p class="petit">Vous avez un bon cadeau ? Cochez la case dans le formulaire : vous n'avez rien à payer.</p>
       <p class="petit">Annulation ou report gratuit jusqu'à [DÉLAI] avant la plongée. Vous préférez appeler ? [TÉLÉPHONE].</p>
       <p class="petit">C'est pour offrir ? <a href="offrir.html">Commandez plutôt un bon cadeau</a>, sans date à fixer.</p>
@@ -56,11 +55,18 @@
       <div class="message message--erreur" id="erreurs" role="alert" hidden></div>
 
       <div class="champ">
-        <label for="offre">Plongée souhaitée</label>
+        <label for="offre">Activité souhaitée</label>
         <select id="offre" name="offre">
-          <option value="bapteme">Baptême de plongée</option>
-          <option value="collectif">Cours collectif</option>
-          <option value="individuel">Cours individuel</option>
+          <optgroup label="Plongée">
+            <option value="bapteme">Baptême de plongée</option>
+            <option value="collectif">Cours collectif de plongée</option>
+            <option value="individuel">Cours individuel de plongée</option>
+          </optgroup>
+          <optgroup label="Apnée">
+            <option value="apnee-decouverte">Découverte de l'apnée</option>
+            <option value="apnee-collectif">Cours collectif d'apnée</option>
+            <option value="apnee-individuel">Cours individuel d'apnée</option>
+          </optgroup>
           <option value="autre">Groupe, déplacement ou sortie en mer</option>
         </select>
       </div>
@@ -84,7 +90,7 @@
       <div class="champ">
         <label for="email">E-mail</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
-        <span class="champ__aide">La confirmation et le lien de paiement arrivent à cette adresse.</span>
+        <span class="champ__aide">La confirmation de votre date arrive à cette adresse.</span>
       </div>
 
       <div class="champ">
@@ -122,7 +128,7 @@
   <footer class="pied">
     <div class="conteneur pied__grille">
       <div class="pied__bloc">
-        <span class="pied__nom">Gaël Le Pennec · Moniteur de plongée</span>
+        <span class="pied__nom">Gaël Le Pennec · Apnée et plongée en fosse</span>
         <span>Paris et Île-de-France · Déplacements : [ZONE DE DÉPLACEMENT]</span>
         <span>[DIPLÔME] · Carte professionnelle n° [NUMÉRO]</span>
       </div>
@@ -132,7 +138,8 @@
         <span>[RÉSEAUX SOCIAUX]</span>
       </div>
       <div class="pied__bloc">
-        <a href="bapteme.html">Baptême de plongée</a>
+        <a href="apnee.html">Apnée</a>
+        <a href="plongee.html">Plongée</a>
         <a href="reservation.html">Réserver</a>
         <a href="offrir.html">Offrir un bon cadeau</a>
         <a href="reservation.html?bon=1">Utiliser un bon cadeau</a>

@@ -78,8 +78,9 @@ Tout ce qui est entre crochets. Dans VS Code : **Rechercher dans les fichiers** 
 - [ ] `[NOTE]/5 sur [NOMBRE] avis` : à supprimer s'il n'a pas encore d'avis
 - [ ] Trois avis réels, avec l'accord des personnes
 - [ ] Les neuf réponses des questions fréquentes
-- [ ] Les photos : accroche, portrait, galerie de six (remplacer chaque bloc `photo-provisoire` par une balise `<img>`)
-- [ ] `[MONTANT]` de l'acompte, `[DÉLAI]` d'annulation et de réponse, validité des bons cadeaux
+- [ ] Les photos : le site affiche pour l'instant des **photos d'illustration fictives** (Pexels, libres de droits), chargées depuis images.pexels.com. Les remplacer par les vraies photos de Gaël (dossier `images/`) avant la mise en ligne publique : chaque photo est précédée du commentaire `Photo d'illustration à remplacer`
+- [ ] `[DÉLAI]` d'annulation et de réponse, validité des bons cadeaux
+- [ ] Apnée : formules proposées, prix, diplôme d'apnée
 - [ ] Les mentions légales, à faire vérifier avant la mise en ligne publique
 
 ## Hypothèses à confirmer pendant l'entretien
@@ -94,8 +95,8 @@ Le texte du site affirme ces points sans qu'ils aient été confirmés :
 - Il se déplace pour des groupes, d'autres fosses ou des sorties en mer
 - Il propose des bons cadeaux pour les trois offres, payés en ligne avant l'envoi du bon
 - Il accepte d'encaisser par Stripe (compte à son nom) et de valider chaque date à la main par e-mail
-- Le solde se règle sur place, et un bon cadeau dispense de l'acompte
-- Un acompte est demandé après confirmation de la date
+- Aucun acompte : tout se règle sur place le jour J (espèces, chèque ou carte via Stripe), un bon cadeau dispense de paiement
+- Il propose aussi de l'apnée (découverte, cours collectifs, cours individuels)
 - Le déroulé du baptême en cinq étapes (page `bapteme.html`)
 - Le déroulé des cours (pages `cours-collectifs.html` et `cours-individuels.html`)
 
@@ -106,7 +107,8 @@ Le site n'a ni serveur ni base de données. Il s'appuie sur deux services gratui
 | Besoin | Outil | Coût |
 |---|---|---|
 | Recevoir les demandes de réservation | Web3Forms : le formulaire envoie chaque demande par e-mail au moniteur | Gratuit jusqu'à 250 demandes par mois |
-| Encaisser acomptes et bons cadeaux | Liens de paiement Stripe : une page de paiement par carte, sans code | Pas d'abonnement, une commission par paiement |
+| Vendre les bons cadeaux | Liens de paiement Stripe : une page de paiement par carte, sans code | Pas d'abonnement, une commission par paiement |
+| Encaisser la carte le jour J | Application Stripe Dashboard (Tap to Pay) ou QR code d'un lien de paiement | Pas de terminal, une commission par paiement |
 | Valider les dates | La boîte e-mail du moniteur : il répond au client | Gratuit |
 | Suivre les bons cadeaux | Un tableau privé tenu par le moniteur (jamais dans ce dépôt) | Gratuit |
 
@@ -114,9 +116,8 @@ Le site n'a ni serveur ni base de données. Il s'appuie sur deux services gratui
 
 1. Le client remplit le formulaire de `reservation.html` : plongée, date souhaitée, nombre de personnes, nom, e-mail, téléphone facultatif, précisions. Il ne paie rien.
 2. Le moniteur reçoit un e-mail « Nouvelle demande : … » avec toutes les informations.
-3. Il vérifie le créneau de la fosse, puis répond au client : date confirmée, et lien de paiement Stripe de l'acompte.
-4. Le client paie l'acompte par carte. Stripe envoie le reçu au client et prévient le moniteur. Le créneau est bloqué.
-5. Le jour J, le solde se règle sur place.
+3. Il vérifie le créneau de la fosse, puis répond au client : date confirmée.
+4. Le jour J, le client règle sur place : espèces, chèque, ou carte (sans contact sur le téléphone du moniteur avec Tap to Pay, ou QR code d'un lien de paiement Stripe).
 
 ### Parcours 2 : offrir un bon cadeau
 
@@ -128,7 +129,7 @@ Le site n'a ni serveur ni base de données. Il s'appuie sur deux services gratui
 
 1. Le bénéficiaire va sur `reservation.html?bon=1` (lien « J'ai reçu un bon cadeau » sur l'accueil, la page Offrir et le pied de page).
 2. Il coche « J'ai un bon cadeau » et saisit son code. L'e-mail reçu par le moniteur porte la mention « BON CADEAU » dans son objet.
-3. Le moniteur vérifie le code dans son tableau, le marque comme utilisé, et confirme la date. Pas d'acompte.
+3. Le moniteur vérifie le code dans son tableau, le marque comme utilisé, et confirme la date. Rien à payer.
 
 Le site vérifie seulement que le code a une forme plausible. C'est le moniteur qui vérifie qu'il existe et qu'il n'a pas déjà servi.
 
@@ -146,18 +147,18 @@ La clé est visible dans le code du site : c'est prévu ainsi par Web3Forms. Ell
 
 ### 2. Encaisser (Stripe)
 
-1. Le moniteur ouvre un compte Stripe à son nom, avec son numéro SIRET et son compte bancaire professionnel.
-2. Il crée quatre **liens de paiement** depuis le tableau de bord Stripe :
+1. Le moniteur ouvre un compte Stripe à son nom, avec son numéro SIRET et un compte bancaire à son nom (un compte personnel séparé suffit).
+2. Il crée quatre **liens de paiement** pour les bons depuis le tableau de bord Stripe :
 
 | Lien | Prix | Réglages |
 |---|---|---|
 | Bon baptême | [PRIX] € | Quantité modifiable. Champs personnalisés : « Prénom du bénéficiaire », « Petit mot (facultatif) ». Après le paiement : rediriger vers `https://[ADRESSE DU SITE]/confirmation.html?type=cadeau` |
 | Bon cours individuel | [PRIX] € | Mêmes réglages |
 | Bon cours collectif | [PRIX] € | Mêmes réglages |
-| Acompte | [MONTANT] € | Quantité modifiable (une par personne). Champ personnalisé : « Date de la plongée ». Pas de redirection : la confirmation Stripe suffit |
+| Bon découverte de l'apnée | [PRIX] € | Mêmes réglages |
 
-3. Coller les trois liens des bons dans `js/config.js`, rubrique `paiement`.
-4. Garder le lien d'acompte dans un modèle d'e-mail : il n'est pas sur le site, le moniteur l'envoie après avoir confirmé la date.
+3. Coller les quatre liens des bons dans `js/config.js`, rubrique `paiement`.
+4. Pour le jour J : installer l'application Stripe Dashboard sur son téléphone (iPhone sous iOS 17 ou plus, ou Android) et activer Tap to Pay. En secours, créer un lien de paiement par formule et imprimer son QR code.
 
 Commencer en **mode test** de Stripe pour essayer les paiements sans vraie carte, puis passer en mode réel.
 
@@ -174,7 +175,7 @@ Pour le bon lui-même, un modèle Canva avec le prénom, l'offre, le code et la 
 
 À préparer une fois, puis copier-coller :
 
-- **Date confirmée, avec acompte** : date, heure, adresse de la fosse, ce qu'il faut apporter, lien de paiement de l'acompte.
+- **Date confirmée** : date, heure, adresse de la fosse, ce qu'il faut apporter, montant à régler sur place (espèces, chèque ou carte).
 - **Date confirmée, avec bon cadeau** : date, heure, adresse, ce qu'il faut apporter, « rien à payer ».
 - **Date indisponible** : deux ou trois autres créneaux proposés.
 - **Envoi du bon cadeau** : le PDF du bon et la marche à suivre pour réserver.
